@@ -1,6 +1,7 @@
 ﻿1.	以 HTML Editor 開啟 Lab_LocalStorage.html，
 	找出表單的三個文字輸入方塊，它們的 id 分別是什麼?
 
+   txtName txtEmail txtPhone
 
 2.	在 </body> 前，新增一個 <script> 區塊，貼入下列程式碼，
 	用瀏覽器測試一下效果，
@@ -17,6 +18,7 @@
 	
 </script>
 
+function doChange()執行: 網頁TEST區域內容加上.框框的名字+:+框框裡的值+換行
 
 
 

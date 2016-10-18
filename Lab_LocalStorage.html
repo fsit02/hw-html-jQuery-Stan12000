@@ -92,6 +92,31 @@ fieldset .submit {
 
 <span id="test"></span>
 
+<script>
+	function doChange() {
+		// document.getElementById("test").innerHTML += this.name + ":" + this.value + "<br>";
+		localStorage.setItem(this.name, this.value);                                     //localStorage儲存兩項(名字 值)
+		}																				 // localStorage.setItem("Key名稱", "字串值");//前面的window. 可省略不寫
+																						 // localStorage["Key名稱"] = "字串值";//這寫法有cookie的fu
+																						 // localStorage.Key名稱 = "字串值";
+	
+	
+	document.getElementById("txtName").onkeyup = doChange;                               //id為txtName框框的鍵盤按鍵彈起時，執行doChange
+	document.getElementById("txtEmail").onkeyup = doChange;                              //id為txtEmail框同上
+	document.getElementById("txtPhone").onkeyup = doChange;                              //id為txtPhone框上
+	
+	function readAndShow() {
+		if (localStorage["txtName"])                                                      //localStorage取值  值為字串
+			document.getElementById("txtName").value = localStorage["txtName"];           //localStorage.getItem("Key名稱"); localStorage["Key名稱"]; localStorage.Key名稱;
+		if (localStorage["txtEmail"])                                                     
+			document.getElementById("txtEmail").value = localStorage["txtEmail"];         //當localStorage["txtName"] 、localStorage["txtEmail"]、localStorage["txtPhone"]為TRUE時 分別把localStorage的值讀到框框裡
+		if (localStorage["txtPhone"])
+			document.getElementById("txtPhone").value = localStorage["txtPhone"];
+	}
+	
+		window.onload = readAndShow;                                                      //網頁讀取時執行readAndShow
+		document.forms[0].onsubmit = function () { localStorage.clear(); };               //當表單提交時清空localStorage的資料
+</script>
 
 </body>
 </html>
